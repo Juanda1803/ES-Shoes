@@ -1,9 +1,10 @@
 import React from "react";
 
-import Header from "./components/Header";
+import ShoesNew from "./pages/ShoesNew";
+import "./assets/styles/Global.css";
 
 const App = () => {
-  return <Header />;
+  return <ShoesNew />;
 };
 
 export default App;

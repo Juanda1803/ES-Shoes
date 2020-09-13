@@ -1,0 +1,30 @@
+label {
+  font-size: 20px;
+  margin: 10px 10px;
+}
+.shoesForm {
+  background-color: #fff;
+  width: 370px;
+  border: 2px solid red;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0px 30px;
+}
+.form-container__date {
+  display: flex;
+  margin: 0px 30px;
+}
+.form-day {
+  display: flex;
+  flex-direction: column;
+  margin-right: 45px;
+}
+.form-description {
+  height: 200px;
+}
+.form-date {
+  width: 80px;
+}

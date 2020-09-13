@@ -1,0 +1,46 @@
+.shoes {
+  border: 2px solid red;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+.shoes__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shoes__container--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: #f4f4f7;
+}
+.shoes__container--date {
+  display: flex;
+  color: #fc6dab;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: #fff;
+}
+.shoes__container > ul {
+  text-align: center;
+}
+.shoes__container h1 {
+  font-size: 50px;
+  margin: 10px;
+}
+.shoes__container h2 {
+  font-size: 30px;
+  margin: 10px;
+}
+.shoes__container--image {
+  border-radius: 100px;
+  width: 150px;
+}
