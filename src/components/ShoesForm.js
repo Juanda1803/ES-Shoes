@@ -1,67 +1,112 @@
 import React from "react";
 
-import "../assets/styles/components/ShoesForm.css";
+import "../assets/styles/components/shoesForm.css";
 
 class ShoesForm extends React.Component {
+  // handleChange = e => {
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   })
+  // }
+
+  handleClick(e) {
+    console.log("Button hand click");
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log("form success");
+  }
+
   render() {
     return (
       <div className="shoesForm">
-        <form>
+        <h1>Nuevo Cliente</h1>
+        <form onSubmit={this.handleSubmit}>
           <div className="form-container">
             <label>Nombre</label>
             <input
-              name="firstName"
-              onChange={this.handleChange}
-              placeholder="Nombre"
+              type="text"
+              name="name"
+              autoComplete="off"
+              onChange={this.props.onChange}
+              value={this.props.formValue.name}
             />
           </div>
 
           <div className="form-container">
-            <label>Apellido</label>
-            <input placeholder="Apellido" />
+            <label>Tipo de Arreglo</label>
+            <input
+              type="text"
+              name="typeOfArrangement"
+              autoComplete="off"
+              onChange={this.props.onChange}
+              value={this.props.formValue.typeOfArrangement}
+            />
           </div>
 
           <div className="form-container">
-            <label>Tipo de Arreglo</label>
-            <input placeholder="Tipo de Arreglo" />
-          </div>
-          <div className="form-container">
             <label>Valor</label>
-            <input placeholder="Valor" />
+            <input
+              type="number"
+              step="1000"
+              name="value"
+              autoComplete="off"
+              onChange={this.props.onChange}
+              value={this.props.formValue.value}
+            />
           </div>
 
           <div className="form-container">
             <label>Abono</label>
-            <input placeholder="Abono" />
+            <input
+              type="number"
+              step="1000"
+              name="payment"
+              autoComplete="off"
+              onChange={this.props.onChange}
+              value={this.props.formValue.payment}
+            />
           </div>
+
           <div className="form-container">
             <label>Celular</label>
-            <input placeholder="Celular" />
+            <input
+              type="tel"
+              name="phone"
+              autoComplete="off"
+              onChange={this.props.onChange}
+              value={this.props.formValue.phone}
+            />
           </div>
 
           <div className="form-container">
             <label>Descripcion</label>
             <textarea
+              type="text"
+              name="description"
+              autoComplete="off"
+              onChange={this.props.onChange}
               className="form-description"
-              placeholder="Descripcion"
               rows="10"
               cols="40"
+              value={this.props.formValue.description}
             />
           </div>
 
           <div className="form-container__date">
-            <div className="form-day">
-              <label>Dia</label>
-              <input className="form-date" placeholder="Dia" />
-            </div>
-
-            <div className="form-day">
-              <label>Mes</label>
-              <input className="form-date" placeholder="Mes" />
-            </div>
+            <label>Fecha</label>
+            <input
+              type="date"
+              name="date"
+              autoComplete="off"
+              onChange={this.props.onChange}
+              value={this.props.formValue.date}
+            />
           </div>
 
-          <button className="btn btn-primary save">Guardar</button>
+          <button className="btn btn-primary save" onClick={this.handleClick}>
+            Guardar
+          </button>
         </form>
       </div>
     );

@@ -4,7 +4,10 @@
   height: 80px;
   display: flex;
   align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .header__image {
   height: 80px;
+  margin-left: 10px;
 }

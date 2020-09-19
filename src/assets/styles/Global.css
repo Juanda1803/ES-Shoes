@@ -26,6 +26,20 @@ li {
 ul {
   padding: 0;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.col-6 {
+  width: 550px;
+}
 input,
 textarea {
   border-radius: 5px;
@@ -62,8 +76,8 @@ textarea {
 
 .btn.btn-primary:not(:disabled):not(.disabled):active {
   color: #fff;
-  background-color: #7dcd40;
-  border-color: #7dcd40;
+  background-color: #5e2bff;
+  border-color: #5e2bff;
 }
 
 .btn.btn-primary:not(:disabled):not(.disabled):focus {

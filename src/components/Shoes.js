@@ -21,14 +21,12 @@ class Shoes extends React.Component {
         </div>
         <div className="shoes__container--info">
           <h2>{this.props.phone}</h2>
-          <h2>Valor: ${this.props.value}</h2>
-          <h2>Abono: ${this.props.payment}</h2>
-          <h2>{this.props.description}</h2>
+          <h2>{this.props.value}</h2>
+          <h2>{this.props.payment}</h2>
+          <h2 className="shoes-info__description">{this.props.description}</h2>
         </div>
         <div className="shoes__container--date">
-          <h2>
-            {this.props.day} de {this.props.month}
-          </h2>
+          <h2>{this.props.date}</h2>
         </div>
       </div>
     );
