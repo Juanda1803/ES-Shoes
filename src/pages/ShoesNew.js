@@ -1,94 +1,94 @@
-import React from "react";
+import React from 'react'
 
-import Shoes from "../components/Shoes";
-import ShoesForm from "../components/ShoesForm";
-import Gravatar from "../components/Gravatar";
-import Navbar from "../components/Navbar";
-import "../assets/styles/pages/ShoesNew.css";
+import Shoe from '../components/Shoe'
+import ShoesForm from '../components/ShoesForm'
+import Gravatar from '../components/Gravatar'
+import Navbar from '../components/Navbar'
+import '../assets/styles/pages/ShoesNew.css'
 
 class ShoesNew extends React.Component {
   state = {
     form: {
-      name: "",
-      typeOfArrangement: "",
-      value: "",
-      payment: "",
-      phone: "",
-      description: "",
-      date: "",
-    },
-  };
-  handleChange = (e) => {
+      name: '',
+      typeOfArrangement: '',
+      value: '',
+      payment: '',
+      phone: '',
+      description: '',
+      date: ''
+    }
+  }
+  handleChange = e => {
     this.setState({
       form: {
         ...this.state.form,
-        [e.target.name]: e.target.value,
-      },
-    });
-  };
-  dateToDay() {
-    const day = this.state.form.date;
-    const formDate = new Date(day);
-    const dayNumber = formDate.getDay();
-    const dayLetter = formDate.getDate() + 1;
-    const month = formDate.getMonth();
-    return [dayNumber, dayLetter, month];
+        [e.target.name]: e.target.value
+      }
+    })
   }
-  numberToMonth() {
+  dateToDay () {
+    const day = this.state.form.date
+    const formDate = new Date(day)
+    const dayNumber = formDate.getDay()
+    const dayLetter = formDate.getDate() + 1
+    const month = formDate.getMonth()
+    return [dayNumber, dayLetter, month]
+  }
+  numberToMonth () {
     switch (this.dateToDay()[2]) {
       case 0:
-        return "Enero";
+        return 'Enero'
       case 1:
-        return "Febrero";
+        return 'Febrero'
       case 2:
-        return "Marzo";
+        return 'Marzo'
       case 3:
-        return "Abril";
+        return 'Abril'
       case 4:
-        return "Mayo";
+        return 'Mayo'
       case 5:
-        return "Junio";
+        return 'Junio'
       case 6:
-        return "Julio";
+        return 'Julio'
       case 7:
-        return "Agosto";
+        return 'Agosto'
       case 8:
-        return "Septiembre";
+        return 'Septiembre'
       case 9:
-        return "Octubre";
+        return 'Octubre'
       case 10:
-        return "Noviembre";
+        return 'Noviembre'
       case 11:
-        return "Diciembre";
+        return 'Diciembre'
     }
   }
-  numberToDay() {
-    const DATE = ` ${this.dateToDay()[1]} de ${this.numberToMonth()}`;
+  numberToDay () {
+    const DATE = ` ${this.dateToDay()[1]} de ${this.numberToMonth()}`
     switch (this.dateToDay()[0]) {
       case 0:
-        return `Lunes ${DATE}`;
+        return `Lunes ${DATE}`
       case 1:
-        return `Martes ${DATE}`;
+        return `Martes ${DATE}`
       case 2:
-        return `Miercoles ${DATE}`;
+        return `Miercoles ${DATE}`
       case 3:
-        return `Jueves ${DATE}`;
+        return `Jueves ${DATE}`
       case 4:
-        return `Viernes ${DATE}`;
+        return `Viernes ${DATE}`
       case 5:
-        return `Sabado ${DATE}`;
+        return `Sabado ${DATE}`
       case 6:
-        return `Domingo ${DATE}`;
+        return `Domingo ${DATE}`
     }
   }
-  render() {
+  render () {
     return (
       <div>
         <Navbar />
-        <div className="container">
-          <div className="row">
-            <div className="col col-6">
-              <Shoes
+        <div className='container'>
+          <div className='row'>
+            <div className='col col-6'>
+              <Shoe
                 name={this.state.form.name}
                 typeOfArrangement={this.state.form.typeOfArrangement}
                 value={`Valor: $${this.state.form.value}`}
@@ -98,7 +98,7 @@ class ShoesNew extends React.Component {
                 date={this.numberToDay()}
               />
             </div>
-            <div className="col">
+            <div className='col'>
               <ShoesForm
                 formValue={this.state.form}
                 onChange={this.handleChange}
@@ -108,8 +108,8 @@ class ShoesNew extends React.Component {
         </div>
         <Gravatar />
       </div>
-    );
+    )
   }
 }
 
-export default ShoesNew;
+export default ShoesNew
