@@ -1,18 +1,19 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import logo from "../assets/static/es-shoes.png";
-import "../assets/styles/components/Navbar.css";
+import logo from '../assets/static/es-shoes.png'
+import '../assets/styles/components/Navbar.css'
 
 class Navbar extends React.Component {
-  render() {
+  render () {
     return (
-      <div className="navbar">
-        <a href="/">
-          <img className="navbar__image" src={logo} alt="Logo" />
-        </a>
+      <div className='navbar'>
+        <Link to='/'>
+          <img className='navbar__image' src={logo} alt='Logo' />
+        </Link>
       </div>
-    );
+    )
   }
 }
 
-export default Navbar;
+export default Navbar

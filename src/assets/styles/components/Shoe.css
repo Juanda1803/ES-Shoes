@@ -44,7 +44,21 @@
   font-size: 30px;
   margin: 10px;
 }
+.shoes__reference {
+  display: grid;
+}
 .shoes__container--image {
   border-radius: 100px;
   width: 150px;
+  height: 150px;
+  background-color: #e4e4e4;
+}
+.shoes__container--id {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  background: #e4e4e4;
+  border-radius: 100px;
+  padding: 10px;
 }

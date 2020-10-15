@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Juan",
+      "typeOfArrangement": "Remonta",
+      "value": 27000,
+      "payment": 20000,
+      "phone": 3023455882,
+      "description": "sucios",
+      "date": "Lunes 14 de septiembre"
+    },
+    {
+      "id": 2,
+      "name": "Juan",
+      "typeOfArrangement": "Remonta",
+      "value": 27000,
+      "payment": 20000,
+      "phone": 3023455882,
+      "description": "sucios",
+      "date": "Lunes 14 de septiembre"
+    },
+    {
+      "id": 3,
+      "name": "Juan",
+      "typeOfArrangement": "Remonta",
+      "value": 27000,
+      "payment": 20000,
+      "phone": 3023455882,
+      "description": "sucios",
+      "date": "Lunes 14 de septiembre"
+    },
+    {
+      "id": 4,
+      "name": "Juan",
+      "typeOfArrangement": "Remonta",
+      "value": 27000,
+      "payment": 20000,
+      "phone": 3023455882,
+      "description": "sucios",
+      "date": "Lunes 14 de septiembre"
+    }
+  ]
+}
