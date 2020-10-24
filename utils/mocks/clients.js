@@ -1,4 +1,4 @@
-const moviesMock = [
+const clientsMock = [
   {
     id: 1,
     name: 'Jeff',
@@ -62,5 +62,5 @@ const moviesMock = [
 ];
 
 module.exports = {
-  moviesMock,
+  clientsMock,
 };
