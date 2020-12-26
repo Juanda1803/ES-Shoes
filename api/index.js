@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const {
+  logErrors,
+  wrapErrors,
+  errorHandler,
+} = require('./utils/middleware/errorHandlers');
+const notFoundHandler = require('./utils/middleware/notFoundHandler');
 
-// Configuraciones
+// Settings
 const { config } = require('./config');
 const clientsApi = require('./routes');
 
@@ -13,6 +19,13 @@ app.use(express.json());
 
 // Routes
 clientsApi(app);
+// Catch 404
+app.use(notFoundHandler);
+
+// Errors middleware
+app.use(logErrors);
+app.use(wrapErrors);
+app.use(errorHandler);
 
 // Config port
 app.listen(config.port, () => {

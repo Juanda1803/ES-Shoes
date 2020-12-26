@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Header from "./Header";
-import "../assets/styles/components/Shoe.css";
-import Gravatar from "./Gravatar";
+import Header from './Header';
+import '../assets/styles/components/Shoe.css';
+import Gravatar from './Gravatar';
 
 class Shoe extends React.Component {
   render() {
@@ -22,9 +22,9 @@ class Shoe extends React.Component {
           </h1>
         </div>
         <div className="shoes__container--info">
-          <h2>{this.props.phone}</h2>
+          <h2>Phoneeeee{this.props.phone}</h2>
           <h2>{this.props.value}</h2>
-          <h2>{this.props.payment}</h2>
+          <h2>juan{this.props.payment}</h2>
           <h2 className="shoes-info__description">{this.props.description}</h2>
         </div>
         <div className="shoes__container--date">

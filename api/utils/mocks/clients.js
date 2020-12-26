@@ -1,6 +1,5 @@
 const clientsMock = [
   {
-    id: 1,
     name: 'Jeff',
     typeOfArrangement: 'Bytecard',
     value: 97310,
@@ -12,7 +11,6 @@ const clientsMock = [
       'in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor',
   },
   {
-    id: 2,
     name: 'Mitch',
     typeOfArrangement: 'Voltsillam',
     value: 54377,
@@ -24,7 +22,6 @@ const clientsMock = [
       'a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum',
   },
   {
-    id: 3,
     name: 'Eve',
     typeOfArrangement: 'Hatity',
     value: 92845,
@@ -36,7 +33,6 @@ const clientsMock = [
       'venenatis non sodales sed tincidunt eu felis fusce posuere felis sed',
   },
   {
-    id: 4,
     name: 'Karla',
     typeOfArrangement: 'Temp',
     value: 96927,
@@ -48,7 +44,6 @@ const clientsMock = [
       'id luctus nec molestie sed justo pellentesque viverra pede ac diam cras',
   },
   {
-    id: 5,
     name: 'Bartie',
     typeOfArrangement: 'Bigtax',
     value: 96726,
@@ -61,6 +56,28 @@ const clientsMock = [
   },
 ];
 
+// Me permiter crear clientes filtrados
+const filteredClientsMock = (name) => {
+  // Me retorna
+  console.log(name);
+  return clientsMock.filter((client) => client.name.includes(name));
+};
+
+// Mock de mis servicios
+class ClientsServiceMock {
+  async getClients() {
+    // Cada vez que llamemos get clients va a retornar el mock de los clients
+    return Promise.resolve(clientsMock);
+  }
+
+  async createClient() {
+    // Cada vez que llamemos createClients me va retornan el primer clientes del mock
+    return Promise.resolve(clientsMock[0]);
+  }
+}
+
 module.exports = {
   clientsMock,
+  filteredClientsMock,
+  ClientsServiceMock,
 };

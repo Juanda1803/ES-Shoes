@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
+import React from 'react';
 
-import ShoesList from "../components/ShoesList";
-import logo from "../assets/static/es-shoes.png";
-import "../assets/styles/pages/Shoes.css";
-import { Link } from "react-router-dom";
-import PageLoding from "../components/PageLoding";
-import PageError from "../components/PageError";
+import ShoesList from '../components/ShoesList';
+import logo from '../assets/static/es-shoes.png';
+import '../assets/styles/pages/Shoes.css';
+import { Link } from 'react-router-dom';
+import PageLoding from '../components/PageLoding';
+import PageError from '../components/PageError';
 
-const API = "http://localhost:3000/data";
+const API = 'http://localhost:3000/data';
 
 class Shoes extends React.Component {
   constructor(props) {
@@ -18,17 +18,19 @@ class Shoes extends React.Component {
       data: [],
     };
 
-    console.log("1. contructor()");
+    console.log('1. contructor()');
   }
+
   componentDidMount() {
     this.fetchData();
   }
+
   fetchData = () => {
     this.setState({
       loading: true,
       error: null,
     });
-    console.log("3. componentDidMount()");
+    console.log('3. componentDidMount()');
 
     fetch(API)
       .then((response) => response.json())
@@ -36,10 +38,10 @@ class Shoes extends React.Component {
       .catch((error) => this.setState({ loading: false, error: error }));
   };
   componentDidUpdate(prevProps, prevState) {
-    console.log("5. componentDidUpdate()");
+    console.log('5. componentDidUpdate()');
     console.log({
-      prevProps: prevProps,
-      prevState: prevState,
+      prevProps,
+      prevState,
     });
     console.log({
       props: this.props,
@@ -47,11 +49,11 @@ class Shoes extends React.Component {
     });
   }
   componentWillUnmount() {
-    console.log("6. componentWillUnmount()");
+    // console.log("6. componentWillUnmount()");
     clearTimeout(this.timeoutId);
   }
   render() {
-    console.log("2/4. render()");
+    console.log('2/4. render()');
     if (this.state.loading === true) {
       return <PageLoding />;
     }
@@ -61,7 +63,7 @@ class Shoes extends React.Component {
     }
 
     return (
-      <Fragment>
+      <>
         <div className="Shoes">
           <div className="Shoes__hero">
             <div className="Shoes__container">
@@ -82,7 +84,7 @@ class Shoes extends React.Component {
             </div>
           </div>
         </div>
-      </Fragment>
+      </>
     );
   }
 }
