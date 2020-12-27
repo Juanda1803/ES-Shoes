@@ -10,12 +10,12 @@ const {
   logErrors,
   errorHandler,
   wrapErrors,
-} = require('../backends/utils/middleware/errorHandlers');
-const notFoundHandler = require('../backends/utils/middleware/notFoundHandler');
+} = require('./utils/middleware/errorHandlers');
+const notFoundHandler = require('./utils/middleware/notFoundHandler');
 // Config
-const config = require('../backends/config');
+const config = require('./config');
 // Router
-const router = require('../backends/network/router');
+const router = require('./network/router');
 
 //--------------------------------------
 
