@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import PageLoding from '../components/PageLoding';
 import PageError from '../components/PageError';
 
-const API = 'http://localhost:3000/data';
+const CLIENT_API = 'http://localhost:3000/api/client';
 
 class Shoes extends React.Component {
   constructor(props) {
@@ -17,8 +17,6 @@ class Shoes extends React.Component {
       error: null,
       data: [],
     };
-
-    console.log('1. contructor()');
   }
 
   componentDidMount() {
@@ -30,15 +28,31 @@ class Shoes extends React.Component {
       loading: true,
       error: null,
     });
-    console.log('3. componentDidMount()');
 
-    fetch(API)
-      .then((response) => response.json())
-      .then((data) => this.setState({ loading: false, data: data }))
-      .catch((error) => this.setState({ loading: false, error: error }));
+    try {
+      // const response = await fetch(CLIENT_API);
+      // const data = await response.json();
+      const data = [];
+      this.setState({
+        loading: false,
+        data: data,
+      });
+    } catch (error) {
+      this.state({
+        loading: false,
+        error: error,
+      });
+    }
+
+    // fetch(API)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     this.setState({ loading: false, data: data });
+    //     console.log(data);
+    //   })
+    //   .catch((error) => this.setState({ loading: false, error: error }));
   };
   componentDidUpdate(prevProps, prevState) {
-    console.log('5. componentDidUpdate()');
     console.log({
       prevProps,
       prevState,
@@ -53,11 +67,12 @@ class Shoes extends React.Component {
     clearTimeout(this.timeoutId);
   }
   render() {
-    console.log('2/4. render()');
+    // Loading Handler
     if (this.state.loading === true) {
       return <PageLoding />;
     }
 
+    // Error Handler
     if (this.state.error) {
       return <PageError />;
     }
@@ -80,7 +95,7 @@ class Shoes extends React.Component {
           </div>
           <div className="Shoes__list">
             <div className="Shoes-list__conatiner">
-              <ShoesList shoes={this.state.data} />
+              {/* <ShoesList shoes={this.state.data} /> */}
             </div>
           </div>
         </div>

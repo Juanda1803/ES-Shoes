@@ -1,8 +1,7 @@
-import React from "react";
-import md5 from "md5";
+import React from 'react';
+import md5 from 'md5';
 
 const Gravatar = ({ name }) => {
-  console.log(md5(name));
   const hash = md5(name);
   return (
     <img
